@@ -1,54 +1,39 @@
 // # Ghost Configuration
 // Setup your Ghost install for various environments
-// Documentation can be found at http://support.ghost.org/config/
- 
+// Documentation can be found at http://docs.ghost.org/usage/configuration/
+
 var path = require('path'),
     config;
-
+    
 config = {
+<<<<<<< HEAD
+    // ### Development **(default)**
+    development: {
+        // The url to use when providing links to the site, E.g. in RSS and email.
+        url: 'http://sashabayanblog.azurewebsites.net/',
+        
+        
+        
+          mail: {
+              transport: 'SMTP',
+              options: {
+                  service: 'Mailgun',
+                  auth: {
+                      user: 'postmaster@mg.sashafiercejs.com', // mailgun username
+                      pass: 'cd14d48039dac5f74e73d028812d7320'  // mailgun password
+                  }
+              }
+          },
+          
+          
+=======
     // ### Production
     // When running Ghost in the wild, use the production environment
     // Configure your URL and mail settings here
     production: {
-        url: 'http://sashabayanblog.azurewebsites.net/',
-        mail: {},
-        database: {
-            client: 'sqlite3',
-            connection: {
-                filename: path.join(__dirname, '/content/data/ghost.db')
-            },
-            debug: false
-        },
-
-        server: {
-            // Host to be passed to node's `net.Server#listen()`
-            host: '127.0.0.1',
-            // Port to be passed to node's `net.Server#listen()`, for azure set this to `process.env.PORT`
-            port: process.env.PORT
-        }
-    },
-
-    // ### Development **(default)**
-    development: {
-        // The url to use when providing links to the site, E.g. in RSS and email.
-        // Change this to your Ghost blogs published URL.
         url: 'http://yourawesomewebsite.azurewebsites.net/',
-
-        // Example mail config
-        // Visit http://support.ghost.org/mail for instructions
-        // ```
-        //  mail: {
-        //      transport: 'SMTP',
-        //      options: {
-        //          service: 'Mailgun',
-        //          auth: {
-        //              user: '', // mailgun username
-        //              pass: ''  // mailgun password
-        //          }
-        //      }
-        //  },
-        // ```
-
+        mail: {},
+>>>>>>> parent of 3cd5374... Built Ghost for production
         database: {
             client: 'sqlite3',
             connection: {
@@ -66,9 +51,40 @@ config = {
             contentPath: path.join(__dirname, '/content/')
         }
     },
-
+    
+    // ### Production
+    // When running Ghost in the wild, use the production environment
+    // Configure your URL and mail settings here
+    production: {
+        url: 'http://sashabayanblog.azurewebsites.net/',
+        
+          mail: {
+              transport: 'SMTP',
+              options: {
+                  service: 'Mailgun',
+                  auth: {
+                      user: 'postmaster@mg.sashafiercejs.com', // mailgun username
+                      pass: 'cd14d48039dac5f74e73d028812d7320'  // mailgun password
+                  }
+              }
+          },
+                        database: {
+          client: 'sqlite3',
+            connection: {
+                filename: path.join(__dirname, '/content/data/ghost.db')
+            },
+            debug: false
+        },
+        server: {
+            // Host to be passed to node's `net.Server#listen()`
+            host: '127.0.0.1',
+            // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
+            port: '2368'
+        }
+    },
+    
     // **Developers only need to edit below here**
-
+    
     // ### Testing
     // Used when developing Ghost to run tests and check the health of Ghost
     // Uses a different port number
@@ -86,7 +102,7 @@ config = {
         },
         logging: false
     },
-
+    
     // ### Testing MySQL
     // Used by Travis - Automated testing run through GitHub
     'testing-mysql': {
@@ -107,7 +123,7 @@ config = {
         },
         logging: false
     },
-
+    
     // ### Testing pg
     // Used by Travis - Automated testing run through GitHub
     'testing-pg': {
