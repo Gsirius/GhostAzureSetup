@@ -7,6 +7,9 @@ var path = require('path'),
     
 config = {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5ed77b8c8b6c66d7a9e502a1a3c5ae141bf5834f
     // ### Development **(default)**
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
@@ -26,6 +29,7 @@ config = {
           },
           
           
+<<<<<<< HEAD
 =======
     // ### Production
     // When running Ghost in the wild, use the production environment
@@ -34,6 +38,8 @@ config = {
         url: 'http://yourawesomewebsite.azurewebsites.net/',
         mail: {},
 >>>>>>> parent of 3cd5374... Built Ghost for production
+=======
+>>>>>>> 5ed77b8c8b6c66d7a9e502a1a3c5ae141bf5834f
         database: {
             client: 'sqlite3',
             connection: {
